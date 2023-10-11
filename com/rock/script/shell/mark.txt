@@ -5,3 +5,14 @@
 
     第一行一定要指明系统需要哪种shell解释用户的shell程序，如：#!/bin/sh，#!/bin/bash，#!/bin/csh，，#!/bin/tcsh和，#!/bin/ksh等。
 
+【】启动三种方式
+1、java JAVA_OPTS -jar xxx.jar  锁定命令窗口
+2、java -jar xxx.jar &  使用此命令，窗口不被锁定，可以执行其他命令，但关闭终端窗口程序会终止运行
+3、nohup java -jar xxx.jar &  ---输出默认 nohup.out文件中
+    nohup java -jar xxx.jar >temp.txt & ---输出指定文件temp.txt中
+    nohup java -jar xxx.jar  >/dev/null 2>&1 &---输出到null位置
+
+特点：使用此命令，账户退出或者终端窗口关闭，程序仍然运行。默认情况下所有的输出会保存在当前路径下nohup.out文件中
+
+
+
